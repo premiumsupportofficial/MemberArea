@@ -9,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if ((username === 'user1' && password === 'password123') || 
         (username === 'user2' && password === 'password223')) {
         // Credentials are correct, navigate to another page
-        window.location.href = 'welcome.html'; // Assuming 'welcome.html' is the page to navigate to
+        window.location.href = 'dashboard.html'; // Assuming 'welcome.html' is the page to navigate to
     } else {
         // Credentials are incorrect, show an error message or handle accordingly
         alert('Invalid username or password!');
