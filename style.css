@@ -1,0 +1,40 @@
+/* Example CSS */
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    /* Add your styling here */
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
