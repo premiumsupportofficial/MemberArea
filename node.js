@@ -1,26 +1,23 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    
-    // TODO: Implement your database check here.
-    // For now, let's assume these are the correct credentials.
-    if (username === 'user1' && password === 'password123') {
-        res.json({ success: true });
+
+    // This is where you'd check the credentials.
+    // NEVER store plaintext passwords; this is for demonstration only.
+    if(username === 'user1' && password === 'password123') {
+        res.redirect('/dashboard.html');
     } else {
-        res.json({ success: false });
+        res.status(401).send('Login failed');
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running
-    on port ${port}`);
-});
+app.use(express.static('public')); // Serve your static files from the "public" directory
 
-// Serve the HTML, JS, and CSS files
-app.use(express.static('path_to_your_static_files')); // Replace with the path to your static files
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
