@@ -1,27 +1,17 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+    event.preventDefault(); // Prevent form from submitting normally
+    
+    // Retrieve user input
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
 
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
-
-  // Send these values to your backend server
-  fetch('/login', { // Make sure this matches the route on your server
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.message === 'Login successful') {
-      // Redirect to the dashboard.html page
-      window.location.href = data.redirectUrl;
+    // Check credentials
+    if ((username === 'user1' && password === 'password123') || 
+        (username === 'user2' && password === 'password223')) {
+        // Credentials are correct, navigate to another page
+        window.location.href = 'welcome.html'; // Assuming 'welcome.html' is the page to navigate to
     } else {
-      alert(data.message); // Show an error message
+        // Credentials are incorrect, show an error message or handle accordingly
+        alert('Invalid username or password!');
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
 });
