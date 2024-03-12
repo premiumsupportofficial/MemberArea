@@ -5,23 +5,25 @@
     <title>Login to Premium Support</title>
 </head>
 <body>
-    <h2>Welcome Back</h2>
-    <div class="container">
-        <img class="logo" src="assets/img/img-login.svg" alt="Logo">
+    <div class="main">
+        <h2>Welcome Back</h2>
+        <div class="container">
+            <img class="logo" src="assets/img/img-login.svg" alt="Logo">
+        </div>
+        <div class="containera">
+            <form id="loginForm">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <script src="login.js"></script>
     </div>
-    <div class="containera">
-        <form id="loginForm">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter your Username" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-    <script src="login.js"></script>
 </body>
 </html>
