@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-// Fake "database" of user credentials
+// Fake "database" of user credentials.
 const userDatabase = {
   'user1': bcrypt.hashSync('password123', 10),
   'user2': bcrypt.hashSync('password223', 10),
